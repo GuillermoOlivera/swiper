@@ -1517,7 +1517,7 @@ See variable `ivy-recursive-restore' for further information."
   (interactive)
   (ivy-call)
   (with-ivy-window
-    (recenter-top-bottom)))
+    (recenter)))
 
 (defun ivy-next-line-and-call (&optional arg)
   "Move cursor vertically down ARG candidates.
@@ -1525,7 +1525,7 @@ Call the permanent action if possible."
   (interactive "p")
   (ivy-next-line arg)
   (ivy--exhibit)
-  (ivy-call))
+  (ivy-call-and-recenter))
 
 (defun ivy-previous-line-and-call (&optional arg)
   "Move cursor vertically up ARG candidates.
@@ -1533,7 +1533,7 @@ Call the permanent action if possible."
   (interactive "p")
   (ivy-previous-line arg)
   (ivy--exhibit)
-  (ivy-call))
+  (ivy-call-and-recenter))
 
 (defun ivy-previous-history-element (arg)
   "Forward to `previous-history-element' with ARG."
